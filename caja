@@ -12,9 +12,6 @@ class CajaRegistradora:
     def __init__(self):
         self.venta_producto = []
 
-    def escanear_producto(self, producto):
-        self.venta_producto.append(producto)
-
     def calcular_subtotal(self):
         subtotal = sum(producto.precio for producto in self.venta_producto)
         return subtotal
