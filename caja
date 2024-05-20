@@ -1,18 +1,22 @@
 class Producto:
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
+    def __init__(self, cod, name, pr):
+        self.cod = codigo
+        self.name = nombre
+        self.pr = precio
+
+
+#Se trata a la nueva clase Registradora, se toman productos y cantidad de valores de venta 
+
 
 class CajaRegistradora:
     def __init__(self):
-        self.productos_comprados = []
+        self.venta_producto = []
 
     def escanear_producto(self, producto):
-        self.productos_comprados.append(producto)
+        self.venta_producto.append(producto)
 
     def calcular_subtotal(self):
-        subtotal = sum(producto.precio for producto in self.productos_comprados)
+        subtotal = sum(producto.precio for producto in self.venta_producto)
         return subtotal
 
     def calcular_total(self):
