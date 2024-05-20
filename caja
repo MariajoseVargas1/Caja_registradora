@@ -1,27 +1,3 @@
-[6:04 a.m., 20/5/2024] Majo🐣☀️: class Producto:
-    def __init__(self, codigo, nombre, precio):
-        self.codigo = codigo
-        self.nombre = nombre
-        self.precio = precio
-
-class CajaRegistradora:
-    def __init__(self):
-        self.productos_comprados = []
-        self.descuentos = {"codigo_producto": 0.1}  # Ejemplo de descuentos por código de producto
-
-    def escanear_producto(self, producto):
-        self.productos_comprados.append(producto)
-
-    def calcular_subtotal(self):
-        subtotal = sum(producto.precio for producto in self.productos_comprados)
-        return subtotal
-
-    def aplicar_descuentos(self):
-        for producto in self.productos_comprados:
-       …
-[6:07 a.m., 20/5/2024] Majo🐣☀️: Claro, aquí tienes otra forma de implementar la caja registradora utilizando un enfoque más orientado a objetos:
-
-python
 class Producto:
     def __init__(self, codigo, nombre, precio):
         self.codigo = codigo
@@ -38,11 +14,6 @@ class CajaRegistradora:
     def calcular_subtotal(self):
         subtotal = sum(producto.precio for producto in self.productos_comprados)
         return subtotal
-
-    def aplicar_descuentos(self, descuentos):
-        for producto in self.productos_comprados:
-            if producto.codigo in descuentos:
-                producto.precio -= producto.precio * descuentos[producto.codigo]
 
     def calcular_total(self):
         total = self.calcular_subtotal()
